@@ -22,10 +22,8 @@ class TestSelectSelenium(unittest.TestCase):
         text_output_message = driver.find_element_by_xpath('//*[@id="display"]')
         text_input_message.send_keys('Pedro Rojas Enciso')
         button_message.click()
-        time.sleep(1)
         self.assertRegex(text_output_message.text, "Pedro Rojas Enciso")
 
-    @unittest.skip("temp")
     def test_single_Checkbox(self):
         driver = self.driver
         driver.get("https://www.seleniumeasy.com/test/basic-checkbox-demo.html")
@@ -36,7 +34,6 @@ class TestSelectSelenium(unittest.TestCase):
         time.sleep(1)
         self.assertRegex(label_text.text, "Success - Check box is checked")
 
-    @unittest.skip("temp")
     def test_radio_button(self):
         driver = self.driver
         driver.get("https://www.seleniumeasy.com/test/basic-radiobutton-demo.html")
